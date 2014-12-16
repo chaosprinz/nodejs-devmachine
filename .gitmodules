@@ -1,0 +1,3 @@
+[submodule "chef/cookbooks/mongodb"]
+	path = chef/cookbooks/mongodb
+	url = https://github.com/chaosprinz/chef-mongodb
