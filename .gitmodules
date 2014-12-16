@@ -13,3 +13,12 @@
 [submodule "chef/cookbooks/python"]
 	path = chef/cookbooks/python
 	url = https://github.com/chaosprinz/python
+[submodule "chef/cookbooks/yum-epel"]
+	path = chef/cookbooks/yum-epel
+	url = https://github.com/chaosprinz/yum-epel
+[submodule "chef/cookbooks/yum"]
+	path = chef/cookbooks/yum
+	url = https://github.com/opscode-cookbooks/yum
+[submodule "chef/cookbooks/ark"]
+	path = chef/cookbooks/ark
+	url = https://github.com/burtlo/ark

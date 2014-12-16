@@ -25,6 +25,7 @@ $RECYCLE.BIN/
 .AppleDouble
 .LSOverride
 .vagrant/*
+data/*
 # Icon must end with two \r
 Icon
 
