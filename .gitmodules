@@ -4,3 +4,6 @@
 [submodule "chef/cookbooks/nodejs"]
 	path = chef/cookbooks/nodejs
 	url = https://github.com/chaosprinz/nodejs
+[submodule "chef/cookbooks/apt"]
+	path = chef/cookbooks/apt
+	url = https://github.com/chaosprinz/apt
