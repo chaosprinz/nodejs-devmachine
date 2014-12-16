@@ -10,3 +10,6 @@
 [submodule "chef/cookbooks/build-essential"]
 	path = chef/cookbooks/build-essential
 	url = https://github.com/chaosprinz/build-essential
+[submodule "chef/cookbooks/python"]
+	path = chef/cookbooks/python
+	url = https://github.com/chaosprinz/python
