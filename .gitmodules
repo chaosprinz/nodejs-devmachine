@@ -1,3 +1,6 @@
 [submodule "chef/cookbooks/mongodb"]
 	path = chef/cookbooks/mongodb
 	url = https://github.com/chaosprinz/chef-mongodb
+[submodule "chef/cookbooks/nodejs"]
+	path = chef/cookbooks/nodejs
+	url = https://github.com/chaosprinz/nodejs
