@@ -1,6 +1,9 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+require 'yaml'
+yamlCfg = YAML.load_file('vm.conf.yml')
+
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
 # backwards compatibility). Please don't change it unless you know what
@@ -12,7 +15,7 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = yamlCfg["box"]
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -22,11 +25,16 @@ Vagrant.configure(2) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 8080 on the guest machine.
-  config.vm.network "forwarded_port", guest: 8080, host: 8080
+  if yamlCfg.has_key? "forwards"
+    yamlCfg["forwards"].each do |forward|
+      config.vm.network "forwarded_port",
+        guest: forward["guest"], host: forward["host"]
+    end
+  end
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  # config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.network "private_network", ip: yamlCfg["ip"]
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -38,18 +46,19 @@ Vagrant.configure(2) do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   config.vm.synced_folder "data", "/home/vagrant/project"
+  config.vm.synced_folder "chef", "/home/vagrant/chef"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  # config.vm.provider "virtualbox" do |vb|
+  config.vm.provider "virtualbox" do |vb|
   #   # Display the VirtualBox GUI when booting the machine
   #   vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
-  #   vb.memory = "1024"
-  # end
+    vb.memory = "1536"
+  end
   #
   # View the documentation for the provider you are using for more
   # information on available options.
@@ -78,5 +87,6 @@ Vagrant.configure(2) do |config|
     chef.add_recipe "mongodb::default"
     chef.add_recipe "nodejs"
     chef.add_recipe "nodejs::npm"
+    chef.add_recipe "npm_install_packages"
   end
 end
