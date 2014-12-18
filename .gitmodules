@@ -25,3 +25,21 @@
 [submodule "chef/cookbooks/nodejs-dev-env-setup"]
 	path = chef/cookbooks/nodejs-dev-env-setup
 	url = https://github.com/chaosprinz/nodejs-dev-env-setup.git
+[submodule "chef/cookbooks/oh-my-zsh"]
+	path = chef/cookbooks/oh_my_zsh
+	url = https://github.com/shingara/oh-my-zsh-chef
+[submodule "chef/cookbooks/git"]
+	path = chef/cookbooks/git
+	url = https://github.com/jssjr/git
+[submodule "chef/cookbooks/dmg"]
+	path = chef/cookbooks/dmg
+	url = https://github.com/opscode-cookbooks/dmg
+[submodule "chef/cookbooks/runit"]
+	path = chef/cookbooks/runit
+	url = https://github.com/hw-cookbooks/runit
+[submodule "chef/cookbooks/windows"]
+	path = chef/cookbooks/windows
+	url = https://github.com/opscode-cookbooks/windows
+[submodule "chef/cookbooks/chef_handler"]
+	path = chef/cookbooks/chef_handler
+	url = https://github.com/opscode-cookbooks/chef_handler
