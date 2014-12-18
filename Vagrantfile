@@ -87,6 +87,6 @@ Vagrant.configure(2) do |config|
     chef.add_recipe "mongodb::default"
     chef.add_recipe "nodejs"
     chef.add_recipe "nodejs::npm"
-    chef.add_recipe "npm_install_packages"
+    chef.add_recipe "nodejs-dev-env-setup"
   end
 end

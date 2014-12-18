@@ -22,3 +22,6 @@
 [submodule "chef/cookbooks/ark"]
 	path = chef/cookbooks/ark
 	url = https://github.com/burtlo/ark
+[submodule "chef/cookbooks/nodejs-dev-env-setup"]
+	path = chef/cookbooks/nodejs-dev-env-setup
+	url = https://github.com/chaosprinz/nodejs-dev-env-setup.git
